@@ -46,4 +46,4 @@ jobs:
       - name: Deploy
         run: |
           ls
-          echo "${{jobs.build.outputs.test-file-name}}"
+          echo "${{needs.build.outputs.test-file-name}}"
