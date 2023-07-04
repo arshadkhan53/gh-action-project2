@@ -29,7 +29,8 @@ jobs:
         run: npm run build
       - name: File name
         id: get-file-name
-        run: echo "file-name=test.jpg" >> "$GITHUB_OUTPUT"
+        # run: echo "file-name=test.jpg" >> "$GITHUB_OUTPUT"
+        run: find dist -name "*.js" -type f -exec echo "file-name={}" >> "$GITHUB_OUTPUT"
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
