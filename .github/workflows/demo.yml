@@ -44,6 +44,7 @@ jobs:
         with:
           name: node-build-artifact
       - name: Deploy
-        run: |
-          ls
-          echo "${{needs.build.outputs.test-file-name}}"
+        run: ls
+      - name: show output
+        run: echo "${{ needs.build.outputs.test-file-name }}"
+
